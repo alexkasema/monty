@@ -36,7 +36,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+int _program_error(int flag);
+int _file_error(char *file_name);
+int _opcode_errors(int flag, unsigned int line_num);
 
 #endif
 
