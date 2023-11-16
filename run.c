@@ -20,7 +20,7 @@ int _run(FILE *fd)
 		if (_line_empty(line, delim))
 			continue;
 		token = _tokenize(line, delim);
-		if (strcmp(token[0], "nop") == 0)
+		if (token[0][0] == '#' || strcmp(token[0], "nop") == 0)
 		{
 			free(token);
 			continue;
