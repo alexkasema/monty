@@ -51,7 +51,7 @@ void _mul(stack_t **stack, unsigned int line_num);
 void _mod(stack_t **stack, unsigned int line_num);
 void _pchar(stack_t **stack, unsigned int line_num);
 void _pstr(stack_t **stack, unsigned int line_num);
-
+void _rotl(stack_t **stack, unsigned int line_num);
 
 char **_tokenize(char *line, char *delim);
 int _line_empty(char *line, char *delim);

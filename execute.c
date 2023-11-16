@@ -24,10 +24,11 @@ int _opcodes(char **token, stack_t **stack, unsigned int line_num)
 		{"mod", _mod},
 		{"pchar", _pchar},
 		{"pstr", _pstr},
+		{"rotl", _rotl},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 12; i++)
+	for (i = 0; i < 13; i++)
 	{
 		if (strcmp(exec[i].opcode, token[0]) == 0)
 		{

@@ -55,3 +55,27 @@ void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 	}
 	printf("\n");
 }
+
+/**
+ * _rotl - rotates the stack to the top.
+ * @stack: double pointer to the stack
+ * @line_num: number line to command
+ * Return: void
+ */
+
+void _rotl(stack_t **stack, __attribute__((unused))unsigned int line_num)
+{
+	int first;
+	stack_t *step = *stack;
+
+	if (*stack)
+	{
+		first = step->n;
+		while (step->next != NULL)
+		{
+			step->n = step->next->n;
+			step = step->next;
+		}
+		step->n = first;
+	}
+}
