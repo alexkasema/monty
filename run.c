@@ -20,8 +20,12 @@ int _run(FILE *fd)
 		if (_line_empty(line, delim))
 			continue;
 		token = _tokenize(line, delim);
-
-		if (strcmp(token[0], "push") == 0)
+		if (strcmp(token[0], "nop") == 0)
+		{
+			free(token);
+			continue;
+		}
+		else if (strcmp(token[0], "push") == 0)
 			exit_status = _push(&stack, token, line_num);
 		else
 			exit_status = _opcodes(token, &stack, line_num);
