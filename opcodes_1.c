@@ -103,3 +103,24 @@ void _pop(stack_t **stack, unsigned int line_num)
 	*stack = current->next;
 	free(current);
 }
+
+/**
+ * _swap - swaps the top two elements of the stack
+ * @stack: double pointer to stack
+ * @line_num: number line of command
+ * Return: nothing
+ */
+
+void _swap(stack_t **stack, unsigned int line_num)
+{
+	int num;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		_opcode_errors(3, line_num);
+		exit(EXIT_FAILURE);
+	}
+	num = (*stack)->next->n;
+	(*stack)->next->n = (*stack)->n;
+	(*stack)->n = num;
+}
