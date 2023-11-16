@@ -42,7 +42,7 @@ char *_getline(FILE *fd)
 	}
 
 	line[index] = '\0';
-	return line;
+	return (line);
 }
 
 /**

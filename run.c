@@ -23,5 +23,14 @@ int _run(FILE *fd)
 
 		if (strcmp(token[0], "push") == 0)
 			exit_status = _push(&stack, token, line_num);
+		else
+			exit_status = _opcodes(token, &stack, line_num);
+		free(token);
+
+		if (exit_status == EXIT_FAILURE)
+			break;
 	}
+	_free_stack(&stack);
+	free(line);
+	return (exit_status);
 }

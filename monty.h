@@ -37,6 +37,11 @@ typedef struct instruction_s
 } instruction_t;
 
 int _run(FILE *fd);
+int _opcodes(char **token, stack_t **stack, unsigned int line_num);
+
+int _push(stack_t **stack, char **token, unsigned int line_num);
+void _pall(stack_t **stack, unsigned int line_num);
+
 
 char **_tokenize(char *line, char *delim);
 int _line_empty(char *line, char *delim);
@@ -44,6 +49,7 @@ int _line_empty(char *line, char *delim);
 char *_getline(FILE *fd);
 char *_realloc(char *str, int size);
 
+void _free_stack(stack_t **stack);
 
 int _program_error(int flag);
 int _file_error(char *file_name);
