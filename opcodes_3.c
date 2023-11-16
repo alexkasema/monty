@@ -45,7 +45,7 @@ void _pstr(stack_t **stack, __attribute__((unused))unsigned int line_num)
 
 	while (current != NULL)
 	{
-		if (current->n > 0 && current->n <= 127)
+		if (current->n >= 1 && current->n <= 127)
 		{
 			printf("%c", current->n);
 			current = current->next;
