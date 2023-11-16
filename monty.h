@@ -42,7 +42,7 @@ int _opcodes(char **token, stack_t **stack, unsigned int line_num);
 int _push(stack_t **stack, char **token, unsigned int line_num);
 void _pall(stack_t **stack, unsigned int line_num);
 void _pint(stack_t **stack, unsigned int line_num);
-
+void _pop(stack_t **stack, unsigned int line_num);
 
 char **_tokenize(char *line, char *delim);
 int _line_empty(char *line, char *delim);

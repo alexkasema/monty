@@ -81,3 +81,25 @@ void _pint(stack_t **stack, unsigned int line_num)
 
 	printf("%d\n", current->n);
 }
+
+/**
+ * _pop - removes topmost element of a stack
+ * @stack: double pointer to stack
+ * @line_num: number line of command
+ * Return: nothing
+ */
+
+void _pop(stack_t **stack, unsigned int line_num)
+{
+	stack_t *current = *stack;
+
+	if (!current)
+	{
+		_opcode_errors(2, line_num);
+		exit(EXIT_FAILURE);
+	}
+	if (current->next)
+		current->next->prev = current->prev;
+	*stack = current->next;
+	free(current);
+}
