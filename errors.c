@@ -40,7 +40,8 @@ int _opcode_errors(int flag, unsigned int line_num)
 		"can't pop an empty stack", "can't swap, stack too short",
 		"can't add, stack too short", "sub, stack too short",
 		"can't div, stack too short", "division by zero",
-		"can't mul, stack too short", "can't mod, stack too short"
+		"can't mul, stack too short", "can't mod, stack too short",
+		"can't pchar, stack empty", "can't pchar, value out of range"
 	};
 
 	fprintf(stderr, "L%d: %s\n", line_num, errors[flag]);
