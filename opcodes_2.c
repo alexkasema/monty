@@ -93,3 +93,33 @@ void _mul(stack_t **stack, unsigned int line_num)
 	(*stack)->next->n = num;
 	_pop(stack, line_num);
 }
+
+/**
+ * _mod - computes the rest of the division of the second top element of the
+ *	stack by the top element of the stack.
+ * @stack: Double pointer to the stack
+ * @line_num: number line of command
+ * Return: Nothing
+ *
+ */
+
+void _mod(stack_t **stack, unsigned int line_num)
+{
+	int num;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		_opcode_errors(9, line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	if ((*stack)->n == 0)
+	{
+		_opcode_errors(7, line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	num = (*stack)->next->n % (*stack)->n;
+	(*stack)->next->n = num;
+	_pop(stack, line_num);
+}

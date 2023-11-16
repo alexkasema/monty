@@ -21,10 +21,11 @@ int _opcodes(char **token, stack_t **stack, unsigned int line_num)
 		{"sub", _sub},
 		{"div", _div},
 		{"mul", _mul},
+		{"mod", _mod},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (strcmp(exec[i].opcode, token[0]) == 0)
 		{
