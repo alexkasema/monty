@@ -21,3 +21,25 @@ void _add(stack_t **stack, unsigned int line_num)
 	(*stack)->next->n = num;
 	_pop(stack, line_num);
 }
+
+/**
+ * _sub -  subtracts the top element of the stack
+ * @stack: double pointer to stack
+ * @line_num: number line of command
+ * Return: Nothing
+ */
+
+void _sub(stack_t **stack, unsigned int line_num)
+{
+	int num;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+	{
+		_opcode_errors(5, line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	num = (*stack)->next->n - (*stack)->n;
+	(*stack)->next->n = num;
+	_pop(stack, line_num);
+}
