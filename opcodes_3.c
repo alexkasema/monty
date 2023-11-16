@@ -79,3 +79,32 @@ void _rotl(stack_t **stack, __attribute__((unused))unsigned int line_num)
 		step->n = first;
 	}
 }
+
+/**
+ * _rotr - rotates the stack to the bottom.
+ * @stack: Double pointer to stack
+ * @line_num: number line to code
+ * Return: Void
+ */
+
+void _rotr(stack_t **stack, __attribute__((unused)) unsigned int line_num)
+{
+	int last;
+	stack_t *step = *stack;
+
+	if (*stack)
+	{
+		while (step->next != NULL)
+			step = step->next;
+
+		last = step->n;
+
+		while (step->prev != NULL)
+		{
+			step->n = step->prev->n;
+			step = step->prev;
+		}
+
+		step->n = last;
+	}
+}
