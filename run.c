@@ -12,6 +12,7 @@ int _run(FILE *fd)
 	stack_t *stack = NULL;
 	char *line = NULL, **token = NULL;
 	char delim[] = " \n\t\b\a";
+	unsigned int state = 1;
 	unsigned int line_num = 0, exit_status = EXIT_SUCCESS;
 
 	while ((line = _getline(fd)) != NULL)
@@ -25,8 +26,14 @@ int _run(FILE *fd)
 			free(token);
 			continue;
 		}
-		else if (strcmp(token[0], "push") == 0)
+		else if (strcmp(token[0], "stack") == 0)
+			state = 1;
+		else if (strcmp(token[0], "queue") == 0)
+			state = 0;
+		else if (strcmp(token[0], "push") == 0 && state == 1)
 			exit_status = _push(&stack, token, line_num);
+		else if (strcmp(token[0], "push") == 0 && state == 0)
+			exit_status = _queue(&stack, token, line_num);
 		else
 			exit_status = _opcodes(token, &stack, line_num);
 		free(token);
