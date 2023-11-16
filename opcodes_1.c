@@ -60,3 +60,24 @@ void _pall(stack_t **stack, __attribute__((unused))unsigned int line_num)
 		current = current->next;
 	}
 }
+
+/**
+ * _pint - print the top most element
+ * @stack: double pointer to stack
+ * @line_num: number line of command
+ * Return: Nothing
+ *
+ */
+
+void _pint(stack_t **stack, unsigned int line_num)
+{
+	stack_t *current = *stack;
+
+	if (!current)
+	{
+		_opcode_errors(1, line_num);
+		exit(EXIT_FAILURE);
+	}
+
+	printf("%d\n", current->n);
+}

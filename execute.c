@@ -14,10 +14,11 @@ int _opcodes(char **token, stack_t **stack, unsigned int line_num)
 
 	instruction_t exec[] = {
 		{"pall", _pall},
+		{"pint", _pint},
 		{"null", NULL}
 	};
 
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < 3; i++)
 	{
 		if (strcmp(exec[i].opcode, token[0]) == 0)
 		{

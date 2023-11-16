@@ -36,7 +36,7 @@ int _file_error(char *file_name)
 int _opcode_errors(int flag, unsigned int line_num)
 {
 	char *errors[] = {
-		"usage: push integer",
+		"usage: push integer", "can't pint, stack empty",
 	};
 
 	fprintf(stderr, "L%d: %s\n", line_num, errors[flag]);
