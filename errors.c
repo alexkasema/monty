@@ -39,7 +39,8 @@ int _opcode_errors(int flag, unsigned int line_num)
 		"usage: push integer", "can't pint, stack empty",
 		"can't pop an empty stack", "can't swap, stack too short",
 		"can't add, stack too short", "sub, stack too short",
-		"can't div, stack too short", "division by zero"
+		"can't div, stack too short", "division by zero",
+		"can't mul, stack too short"
 	};
 
 	fprintf(stderr, "L%d: %s\n", line_num, errors[flag]);

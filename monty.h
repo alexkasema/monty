@@ -47,7 +47,7 @@ void _swap(stack_t **stack, unsigned int line_num);
 void _add(stack_t **stack, unsigned int line_num);
 void _sub(stack_t **stack, unsigned int line_num);
 void _div(stack_t **stack, unsigned int line_num);
-
+void _mul(stack_t **stack, unsigned int line_num);
 
 char **_tokenize(char *line, char *delim);
 int _line_empty(char *line, char *delim);
